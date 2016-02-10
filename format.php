@@ -121,7 +121,7 @@ if (!$PAGE->user_is_editing())
 
     //Insert the section 0
     $section = 0;
-    $thissection = $sections[$section];
+    $thissection = $modinfo->get_section_info($section);
 
     if ($thissection->summary or $thissection->sequence or $PAGE->user_is_editing())
     {
@@ -273,7 +273,7 @@ if (!$PAGE->user_is_editing())
             echo '<div class="right side"></div>';
 
             echo '<div class="content">';
-            echo $tabtopicsrenderer->section_hidden($section);
+            echo $tabtopicsrenderer->section_hidden($section, $course);
             echo '</div>';
             echo '</div>';
 
